@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TaskManager">
+<head>
+  <!--
+
+* Author: Neill Coen
+
+* Assignment: BScH Mobile Development, Digital Skills Academy
+
+* Student ID: STU-00001234 * Date : 2017/05/05
+
+* Ref: comments referenced below
+
+* URL: http://site235.digitalskillsacademy.me/urlist/
+
+  -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Ur List | By Neill Coen</title>
+<!-- for use of font awesome icons -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="margin-top:150px;">
+  <div class="container">
+    <div class="content" data-ng-controller="taskController">
+      <h1 class="heading">Ur List</h1>
+      <p class="tagline">of things to do</p>
+      <form>
+        <div class="inputContainer">
+          <input type="text" id="description" class="taskName" placeholder="I need to..." data-ng-model="newTask">
+          <label for="description">Add item here</label>
+        </div>
+        <div class="inputContainer half last"> <i class="fa fa-caret-down selectArrow"></i>
+          <select id="category" class="taskCategory" data-ng-model="newTaskCategory" data-ng-options="obj.name for obj in categories">
+            <option class="disabled" value="">Choose...</option>
+          </select>
+          <label for="category">Priority</label>
+        </div>
+        <div class="inputContainer half last right">
+          <input type="date" id="dueDate" class="taskDate" data-ng-model="newTaskDate">
+          <label for="dueDate">Due Date</label>
+        </div>
+        <div class="row">
+          <button class="taskAdd" data-ng-click="addNew()"><i class="fa fa-plus icon"></i>Add</button>
+          <button class="taskDelete" data-ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete</button>
+        </div>
+      </form>
+      <ul class="taskList">
+        <li class="taskItem" data-ng-repeat="taskItem in taskItem track by $index" data-ng-model="taskItem">
+          <input type="checkbox" class="taskCheckbox" data-ng-model="taskItem.complete" data-ng-change="save()">
+          <span class="complete-{{taskItem.complete}}">{{taskItem.description}}</span> <span class="category-{{taskItem.category}}">{{taskItem.category}}</span> <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}}</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/scripts.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link href="css/styles.css" rel="stylesheet" />
+</body>
+</html>

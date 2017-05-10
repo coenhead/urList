@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.neillcoen.urlist"
+    versionCode = "1"
+    version     = "1.0.0" >
+
+
+  <name>Ur List</name>
+
+  <description>
+      A To Do List for You using AngularJS.
+  </description>
+
+  <author href="http://site235.digitalskillsacademy.me/urlist/" email="neill.coen@digitalskillsacademy.me">
+      Neill Coen
+  </author>
+
+  <!-- for all platforms -->
+  <preference name="phonegap-version" value="cli-6.5.0"/>
+  <preference name="orientation" value="portrait"/> <!-- portrait orientation only -->
+  <preference name="fullscreen" value="true"/> <!-- hides the status bar at the top of the screen -->
+  <preference name="permissions" value="none"/> <!-- no permissions added to app, aside from INTERNET permission which PhoneGap requires -->
+
+</widget>
