@@ -1,2 +1,2 @@
 # urList
-A simple to do app using AngularJS
+A to do app using AngularJS and some LocalStorage - part of college degree
